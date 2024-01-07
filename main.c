@@ -365,12 +365,14 @@ void desenhaRetas(){
 }
 
 void addPoligono(float* xi, float* yi, int o){
-    for (int i = 0; i < o; i++){
-        poligonos[quantidade_poligonos].pontos[i].x = xi[i];
-        poligonos[quantidade_poligonos].pontos[i].y = yi[i];
+    if (o >= 3){
+        for (int i = 0; i < o; i++){
+            poligonos[quantidade_poligonos].pontos[i].x = xi[i];
+            poligonos[quantidade_poligonos].pontos[i].y = yi[i];
+        }
+        poligonos[quantidade_poligonos].vertices = o;
+        quantidade_poligonos++;
     }
-    poligonos[quantidade_poligonos].vertices = o;
-    quantidade_poligonos++;
 }
 
 void desenhaPoligonos(){
